@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Question</title>
+</head>
+<body>
+<h1>Question</h1>
+<form action="{% url 'edit question' question.id %}" method="POST">
+    <p>title : <input type="text" name="title" value="{{ question.title }}"></p>
+    <p>Question :<textarea name="body">{{ question.title }}</textarea></p>
+    {% csrf_token %}
+    <p>click this box if you want to delete question : <input type="checkbox" name="delete" value="delete"></p>
+    <input type="submit" name="submit" value="submit">
+</form>
+</body>
+</html>

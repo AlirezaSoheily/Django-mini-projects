@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+<h2>Questions :</h2>
+{% for question in questions %}
+    <hr>
+    User : {{ question.user_id.name }} <br>
+    title : {{ question.title }} <br>
+    Question : {{ question.body }} <br>
+{% empty %}
+    Nothing was found in Questions.
+{% endfor %}
+<br>
+<hr>
+
+<h2>Answers :</h2>
+{% for answer in answers %}
+    <hr>
+    User : {{ answer.user_id.name }} <br>
+    answer : {{ answer.body }} <br>
+{% empty %}
+    Nothing was found in Answers.
+{% endfor %}
+<hr>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question Answers</title>
+</head>
+<body>
+<br>
+<form action="{% url 'search' %}" method="GET">
+    <input type="text" name="search" value="search" placeholder="search">
+    <input type="submit">
+</form>
+<br>
+<h1>Question</h1>
+User : {{ question.user_id.name }} <br>
+Title : {{ question.title }} <br>
+Question : {{ question.body }}
+
+
+<h1>Answers</h1>
+{% for answer in answers %}
+    <hr>
+    User : {{ answer.user_id.name }} <br>
+    <h3>Answer : {{ answer.body }}</h3>
+{% endfor %}
+
+</body>
+</html>

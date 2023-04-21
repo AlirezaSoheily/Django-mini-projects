@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question with 2 answers</title>
+</head>
+<body>
+<br>
+<form action="{% url 'search' %}" method="GET">
+    <input type="text" name="search" value="search" placeholder="search">
+    <input type="submit">
+</form>
+<br>
+{% for q in questions %}
+
+Title : {{ q.title }} <br>
+    question : {{ q.body }}
+
+    <hr>
+{% endfor %}
+
+</body>
+</html>

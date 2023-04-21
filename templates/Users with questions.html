@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users with questions</title>
+</head>
+<body>
+<br>
+<form action="{% url 'search' %}" method="GET">
+    <input type="text" name="search" value="search" placeholder="search">
+    <input type="submit">
+</form>
+<br>
+<h1>Users with questions</h1>
+<ul>
+{% for user in users %}
+    <li>{{ user.user_id_id__name }} {{ user.total }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>
