@@ -7,14 +7,14 @@
 <body>
 <br>
 <form action="{% url 'search' %}" method="GET">
-    <input type="text" name="search" value="search" placeholder="search">
+    <input type="text" name="search">
     <input type="submit">
 </form>
 <br>
     <h2>Questions</h2>
     <ul>
         {% for q in object_list %}
-            <a href="detalView/"><li>{{ q.title }}</li></a>
+            <a href="{% url 'question with answers' q.id '1'%}"><li>{{ q.title }}</li></a>
         {% endfor %}
     </ul>
 </body>
